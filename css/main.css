@@ -1,0 +1,214 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { width: 100%; min-height: 100%; margin: 0; }
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 24px 35px;
+  color: #000;
+  font: 13px "Courier New", "Liberation Mono", monospace;
+  background-color: #101e35;
+  background-image:
+    radial-gradient(circle, rgba(156,181,214,.13) .6px, transparent .9px),
+    radial-gradient(circle, rgba(0,5,17,.35) .6px, transparent .9px),
+    repeating-linear-gradient(0deg, rgba(119,151,192,.035) 0,
+      rgba(119,151,192,.035) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(90deg, rgba(0,4,16,.10) 0,
+      rgba(0,4,16,.10) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse at 50% 42%, #243c5d 0%, #172b47 48%, #0b1528 100%);
+  background-size: 4px 4px, 4px 4px, 3px 3px, 3px 3px, 100% 100%;
+  background-position: 0 0, 2px 2px, 0 0, 0 0, center;
+  background-repeat: repeat;
+}
+#main_content {
+  position: relative;
+  width: 756px;
+  max-width: 100%;
+  padding: 87px 88px 24px;
+  background: #a6a6a6;
+  border: 3px solid;
+  border-color: #e8e8e8 #626262 #626262 #e8e8e8;
+}
+.hp-banner {
+  position: absolute;
+  top: -57px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 492px;
+  max-width: 90%;
+  height: 132px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ae4263;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,210,221,.22) 0,
+      rgba(255,210,221,.22) 1px, transparent 1px, transparent 2px),
+    repeating-linear-gradient(90deg, rgba(35,0,12,.32) 0,
+      rgba(35,0,12,.32) 1px, transparent 1px, transparent 2px);
+  border: 4px solid;
+  border-color: #ff9ab7 #662036 #662036 #f486a7;
+  box-shadow: inset 1px 1px 0 #4d1729, inset -1px -1px 0 #df7897,
+              12px 12px 0 rgba(0,0,0,.22);
+}
+/*.hp-logo {
+  display: block;
+  flex: 0 1 auto;
+  width: 444px;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+*/
+
+.hp-logo {
+  filter:
+    drop-shadow(-1px -1px 0 #4a1426)
+    drop-shadow(1px 1px 0 #f49ab4);
+}
+#pagetitle {
+  margin: 0 0 5px;
+  text-align: center;
+  font: italic 21px/1.25 "Times New Roman", "Liberation Serif", serif;
+  overflow-wrap: break-word;
+}
+#login { margin: 0; }
+.login-well {
+  min-height: 184px;
+  padding: 33px 15px 12px;
+  border: 3px solid;
+  border-color: #727272 #e8e8e8 #e8e8e8 #727272;
+  box-shadow: inset 1px 1px 0 #dedede;
+}
+.field-row {
+  width: 261px;
+  max-width: 100%;
+  min-height: 47px;
+  margin: 0 auto 18px;
+  padding: 7px 10px 7px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 3px solid;
+  border-color: #616161 #ededed #ededed #616161;
+}
+.field-row label {
+  flex: 0 0 68px;
+  text-align: right;
+  font-size: 13px;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+.field-row input {
+  width: 0;
+  min-width: 0;
+  flex: 1 1 auto;
+  height: 24px;
+  padding: 1px 5px;
+  border: 3px solid;
+  border-color: #414141 #dedede #dedede #414141;
+  border-radius: 0;
+  outline: none;
+  background: #7f7f7f;
+  color: #fff;
+  caret-color: #fff;
+  font: 14px "Courier New", "Liberation Mono", monospace;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+.field-row input:focus { outline: 2px solid #f00000; outline-offset: 1px; }
+/* .field-row input:focus { outline: 2px solid #f47da7; outline-offset: 1px; } */
+.field-row input:disabled { opacity: 1; color: #ddd; }
+#messages {
+  min-height: 16px;
+  margin: -5px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 12px;
+  line-height: 16px;
+  overflow-wrap: break-word;
+}
+#messages li.error { color: #690018; }
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 21px 33px 0;
+}
+button {
+  min-width: 100px;
+  height: 23px;
+  padding: 1px 10px;
+  border: 2px solid;
+  border-color: #e8e8e8 #626262 #626262 #e8e8e8;
+  border-radius: 0;
+  background: #a6a6a6;
+  color: #000;
+  font: bold 12px "Courier New", "Liberation Mono", monospace;
+  cursor: default;
+  -webkit-appearance: none;
+}
+button:active { border-color: #626262 #e8e8e8 #e8e8e8 #626262; }
+button:focus { outline: 1px dotted #222; outline-offset: -5px; }
+button:disabled { color: #666; }
+.default-button {
+  padding: 4px;
+  border: 2px solid;
+  border-color: #707070 #e5e5e5 #e5e5e5 #707070;
+}
+.options-container { position: relative; }
+.popup-menu {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  bottom: 31px;
+  min-width: 150px;
+  padding: 4px;
+  background: #a6a6a6;
+  border: 2px outset #ddd;
+  box-shadow: 4px 4px 0 rgba(0,0,0,.45);
+}
+.popup-menu button {
+  display: block;
+  width: 100%;
+  height: 29px;
+  text-align: left;
+  border: 2px solid transparent;
+}
+.popup-menu button:hover:not(:disabled) { border: 2px outset #ddd; }
+.dialog {
+  position: absolute;
+  z-index: 10;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390px;
+  max-width: 94%;
+  padding: 14px;
+  background: #a6a6a6;
+  border: 3px outset #ddd;
+  box-shadow: 7px 7px 0 rgba(0,0,0,.5);
+}
+.dialog h2 {
+  margin: -8px -8px 14px;
+  padding: 5px 7px;
+  background: #7f7f7f;
+  font-size: 14px;
+}
+.dialog p { margin: 12px 0 18px; line-height: 1.5; white-space: pre-line; }
+.dialog-buttons { display: flex; justify-content: center; gap: 14px; }
+@media (max-width: 680px) {
+  #main_content { padding-right: 18px; padding-left: 18px; }
+  .hp-banner { padding: 10px 14px; }
+  .button-row { margin-right: 0; margin-left: 0; gap: 8px;
+                flex-wrap: wrap; justify-content: center; }
+  button { min-width: 90px; }
+}

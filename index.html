@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HP-UX Desktop Login</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <main id="main_content" aria-label="Desktop Login">
+    <header class="hp-banner">
+      <img class="hp-logo" src="assets/hewlett-packard-cde.svg"
+           alt="Hewlett-Packard" width="444" height="92" draggable="false">
+    </header>
+    <h1 id="pagetitle">Welcome to hpux1020</h1>
+    <form id="login" autocomplete="off">
+      <div class="login-well">
+        <div class="field-row">
+          <label for="username">Login:</label>
+          <input id="username" name="username" type="text" spellcheck="false"
+                 autocapitalize="none" autocomplete="off" required autofocus>
+        </div>
+        <div class="field-row">
+          <label id="password-label" for="password">Password:</label>
+          <input id="password" name="password" type="password" autocomplete="off">
+        </div>
+        <ul id="messages" aria-live="polite"></ul>
+      </div>
+      <div class="button-row">
+        <div class="default-button"><button id="ok" type="submit">OK</button></div>
+        <button id="clear" type="button">Clear</button>
+        <div class="options-container">
+          <button id="options" type="button" aria-expanded="false"
+                  aria-controls="options-menu">Options</button>
+          <div id="options-menu" class="popup-menu" hidden>
+            <button id="suspend" type="button">Suspend…</button>
+            <button id="restart" type="button">Restart…</button>
+            <button id="shutdown" type="button">Shut Down…</button>
+          </div>
+        </div>
+        <button id="help" type="button">Help</button>
+      </div>
+    </form>
+    <section id="dialog" class="dialog" role="dialog" aria-modal="true"
+             aria-labelledby="dialog-title" hidden>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-text"></p>
+      <div class="dialog-buttons">
+        <button id="dialog-confirm" type="button">OK</button>
+        <button id="dialog-cancel" type="button">Cancel</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
